@@ -14,14 +14,14 @@ export interface Article {
 
 export interface ArticleRequest {
     q: string;
-    searchIn?: 'title' | 'content' | 'title,content' | undefined;
+    searchIn?: string | 'title' | 'content' | 'title,content' | undefined;
     sources?: string;
     domains?: string;
-    excludeDomains?: string;
+    excludeDomains?: string[];
     from?: string;
     to?: string;
-    language?: 'en' | 'fr' | 'de' | undefined;
-    sortBy?: 'relevancy' | 'popularity' | 'publishedAt' | undefined;
+    language?: string | 'en' | 'fr' | 'de' | undefined;
+    sortBy?: string | 'relevancy' | 'popularity' | 'publishedAt' | undefined;
     pageSize?: number;
     page?: number;
     apiKey: string;

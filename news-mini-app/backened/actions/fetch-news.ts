@@ -21,7 +21,11 @@ export async function fetchNews(params: ArticleRequest): Promise<Article[]> {
     if (params.apiKey) {
         mainUrl = mainUrl + `&apiKey=${params.apiKey}`
     }
-    const data = await fetch(mainUrl, { next: { revalidate: 3600 } });
+    if (params.excludeDomains) {
+        mainUrl = mainUrl + `&excludeDomains=${params.excludeDomains}`
+    }
+    console.log({ mainUrl })
+    const data = await fetch(mainUrl, { next: { revalidate: 365465400 } });
     const { articles } = await data.json();
     if (articles) {
         news = articles;

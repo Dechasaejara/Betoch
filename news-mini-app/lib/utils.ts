@@ -1,3 +1,4 @@
+import { ArticleRequest } from "@/backened/types/article-type";
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 
@@ -51,3 +52,4 @@ export function formatPublishedDate(publishedDate: string) {
     return `${years} year${years !== 1 ? 's' : ''} ago`;
   }
 }
+
